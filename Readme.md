@@ -17,8 +17,6 @@ $ component install intesso/events
 
 ## Usage example
 
-node.js events api:
-
 ```javascript
 var EventEmitter = require('events').EventEmitter;
 var ee = new EventEmitter();
@@ -28,25 +26,6 @@ ee.on('foo', function(data) {
 })
 
 ee.emit('foo', 'bar');
-// -> 'foo received bar'
-```
-
-Another example with the component-emitter api:
-```javascript
-function Obj() {
-  this.name = "Obj";
-}
-
-var Events = require('events');
-Events(Obj.prototype);
-
-obj = new Obj();
-
-obj.addListener('foo', function(data) {
-  console.log('foo received', data);
-})
-
-obj.emit('foo', 'bar');
 // -> 'foo received bar'
 ```
 
